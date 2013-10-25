@@ -1,0 +1,12 @@
+ErrorDocument 404 /404.shtml
+ErrorDocument 403 /403.shtml
+ErrorDocument 400 /400.shtml
+ErrorDocument 401 /401.shtml
+ErrorDocument 500 /500.shtml
+AddHandler php5-script .php
+
+<IfModule mod_deflate.c>
+<FilesMatch "\.(js|css)$">
+SetOutputFilter DEFLATE
+</FilesMatch>
+</IfModule>

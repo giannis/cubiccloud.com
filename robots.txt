@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+Disallow: /download
+Disallow: /processing
+Disallow: /img
+Disallow: /js
+Disallow: /cv
+
+# Google Image
+User-agent: Googlebot-Image
+Disallow:
+Allow: /*
+ 
+# Google AdSense
+User-agent: Mediapartners-Google*
+Disallow:
+Allow: /*
+ 
+# Internet Archiver Wayback Machine
+User-agent: ia_archiver
+Disallow: /
+ 
+# digg mirror
+User-agent: duggmirror
+Disallow: /
+
+Sitemap: http://cubiccloud.com/sitemap.xml.gz
+
+
+
