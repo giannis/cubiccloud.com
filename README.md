@@ -1,4 +1,0 @@
-cubiccloud.com
-==============
-
-me
