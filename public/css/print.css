@@ -1,0 +1,56 @@
+/*--print--*/
+@media print {
+    html, body {
+        margin: 0pt;
+        padding: 0pt;
+        height: 100%;
+        min-height: 100%;
+        width: 100%;    
+    }
+    body {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    #warper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        overflow: hidden;
+    }
+    * html #warper
+    {
+        height: 100%;
+    }
+    div {
+        background-color: none;
+    }
+    .bar .color {
+        background-color: #e0e0e0;
+    }
+    .bar.selected .color {
+        background-color: #B2B2B2;
+    }
+    a, 
+    a:link {
+        text-decoration: none; 
+        color: inherit;
+    }
+    strong {
+        font-weight: bold;
+    }
+    img {
+        border: 0 none;
+    }
+    .hidden {
+        display: none !important;
+    }
+    .empty {
+        color: #ddd;
+        font-style: italic;
+    }
+}

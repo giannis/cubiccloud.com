@@ -1,0 +1,233 @@
+/*
+ * YUI 3.10.0 (build a03ce0e)
+ * Copyright 2013 Yahoo! Inc. All rights reserved.
+ * Licensed under the BSD License.
+ * http: *yuilibrary.com/license/
+*/
+/*
+This has been updated with things from normalize
+*/
+html {
+    color:#000;
+    background:#FFF;
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td {
+    margin:0;
+    padding:0;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+fieldset,img {
+    border:0;
+}
+
+address,caption,cite,code,dfn,em,strong,th,var {
+    font-style:normal;
+    font-weight:400;
+}
+
+ol,ul {
+    list-style:none;
+}
+
+caption,th {
+    text-align:left;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size:100%;
+    font-weight:400;
+}
+
+q:before,q:after {
+    content:'';
+    content: none;
+}
+
+abbr,acronym {
+    border:0;
+    font-variant:normal;
+}
+
+sup {
+    vertical-align:text-top;
+}
+
+sub {
+    vertical-align:text-bottom;
+}
+
+input,textarea,select {
+    font-family:inherit;
+    font-weight:inherit;
+    font-size:100%;
+}
+
+legend {
+    color:#000;
+}
+
+label {
+    cursor: pointer;
+}
+
+/*
+Taken from Normalize.css
+*/
+/* Corrects `block` display not defined in IE 6/7/8/9 and Firefox 3.*/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
+/* Corrects `inline-block` display not defined in IE 6/7/8/9 and Firefox 3 */
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+/* Prevents modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices. */
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/* Addresses styling for `hidden` attribute not present in IE 7/8/9, Firefox 3,
+ * and Safari 4.
+ * Known issue: no IE 6 support. */
+[hidden] {
+    display: none;
+}
+/* 1. Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
+ * `em` units.
+ * 2. Prevents iOS text size adjust after orientation change, without disabling
+ * user zoom. */
+html {
+    font-size: 100%; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%; /* 2 */
+}
+/* 1. Removes border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ 2. Improves image quality when scaled in IE 7. */
+img {
+    border: 0; /* 1 */
+    -ms-interpolation-mode: bicubic; /* 2 */
+    /* [thanos] Modify Normalize
+     * Remove the gap between images and the bottom of their containers: h5bp.com/i/440 */
+    vertical-align: middle;
+}
+
+/* Corrects overflow displayed oddly in IE 9.*/
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+ * Figures
+ * ==========================================================================*/
+
+/* Addresses margin not present in IE 6/7/8/9, Safari 5, and Opera 11.*/
+figure {
+    margin: 0;
+}
+/* Addresses Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.*/
+button,
+input {
+    line-height: normal;
+}
+
+/* 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ * and `video` controls.
+ * 2. Corrects inability to style clickable `input` types in iOS.
+ * 3. Improves usability and consistency of cursor style between image-type
+ * `input` and others.
+ * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
+ * Known issue: inner spacing remains in IE 6.*/
+button,
+html input[type="button"],  /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;  /* 2 */
+    cursor: pointer;  /* 3 */
+    *overflow: visible;  /* 4 */
+}
+
+/* Re-set default cursor for disabled elements. */
+button[disabled],
+input[disabled],
+.disabled {
+    cursor: default;
+}
+
+/* 1. Addresses box sizing set to content-box in IE 8/9.
+ * 2. Removes excess padding in IE 8/9.
+ * 3. Removes excess padding in IE 7.
+ * Known issue: excess padding remains in IE 6. */
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;  /* 1 */
+    padding: 0;  /* 2 */
+    *height: 13px;  /* 3 */
+    *width: 13px;  /* 3 */
+}
+
+/* 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+ * (include `-moz` to future-proof). */
+input[type="search"] {
+    -webkit-appearance: textfield;  /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;  /* 2 */
+    box-sizing: content-box;
+}
+
+/* Removes inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.*/
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/* Removes inner padding and border in Firefox 3+. */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* 1. Removes default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improves readability and alignment in all browsers. */
+textarea {
+    overflow: auto;  /* 1 */
+    vertical-align: top;  /* 2 */
+}
+/* Remove most spacing between table cells.*/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Apply a natural box layout model to all elements
+ * Box-sizing: Border-box FTW — http: *paulirish.com/2012/box-sizing-border-box-ftw/ */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}

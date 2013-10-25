@@ -1,0 +1,11 @@
+{
+    "name": "cubiccloud",
+    "version": "2.0.0",
+    "dependencies": {
+        "jquery": "latest",
+        "requirejs": "latest",
+        "r.js": "latest",
+        "almond": "latest",
+        "log": "git@github.com:adamschwartz/log.git"
+    }
+}

@@ -1,0 +1,17 @@
+/*
+ * cubiccloud
+ * Description: This is the general style of cubiccloud
+ * Version: 2.0
+ * Started: 24-10-2013
+ * Updated: 24-10-2013
+ * Url    : cubiccloud.com
+ * Author : paramana (giannis AT paramana DOT com)
+ *
+ */
+@import "reset.css";       
+@import "base.css";        /* site-wide css*/
+
+@import "inner-base.css";  /* print */    
+
+@import "typography.css";  /* site wide */
+@import "print.css";  /* print */    
