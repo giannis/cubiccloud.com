@@ -78,7 +78,49 @@
     };
     
     App.event = {
-        
+        init: function(){
+            var _self = this;
+            
+            var anchor = location.hash.replace(/^#/, '') || 'home';
+            _self.goTo(anchor, $('.' + anchor));
+            
+            $('body').on({
+                click: function(event){
+                    var $target = $(event.target);
+                    
+                    if ($target.hasClass('nav-link')) {
+                        var parts  = $target.attr('href').split('/'),
+                            anchor = (parts[parts.length - 1] || 'home');                        
+
+                        _self.goTo(anchor, $target);
+                        return false;
+                    }
+                }
+            });
+        },
+        goTo: function(anchor, $target){
+            if (anchor == 'home') {
+                var top = 0;
+            }
+            else {
+                var $anchor = $('#' + anchor);
+                if (!$anchor.length)
+                    top    = 0;
+                else
+                    top = $anchor.offset().top - 50;
+            }
+            
+            $target.closest('ul').find('.active').removeClass('active');
+            $target.addClass('active');
+
+            $('html,body').animate({
+                scrollTop: top
+            }, {
+                duration: 'slow', easing: 'swing'
+            });
+            
+            location.hash = anchor;
+        }
     };
     
     $(window)
@@ -99,6 +141,7 @@
 //            duration: 'slow', easing: 'swing'
 //        });
         App.gmap.init();
+        App.event.init();
     });
 
     // Expose App to the global object
