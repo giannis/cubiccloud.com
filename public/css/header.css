@@ -1,0 +1,61 @@
+/*--Header & site-wide css --*/
+.header {
+    background-color: #ffffff;
+    display: block;
+    height: 120px;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    zoom: 1;
+}
+.header, .header * {
+    transition: all 0.2s ease-in-out 0s;
+}
+.header .section {
+    height: 80px;
+}
+.header .container {
+    padding: 20px 40px;
+}
+.header.scroll {
+    height: 80px;
+    -moz-box-shadow       : 0 -1px 0 rgba(255, 255, 255, 0.2) inset, 0 0 1px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow    : 0 -1px 0 rgba(255, 255, 255, 0.2) inset, 0 0 1px rgba(0, 0, 0, 0.6);
+    box-shadow            : 0 -1px 0 rgba(255, 255, 255, 0.2) inset, 0 0 1px rgba(0, 0, 0, 0.6);
+}
+.header.scroll .container {
+    padding-top: 0;
+}
+.logo h1 {
+    border: none !important;
+    display: block;
+    float: left;
+    height: 30px;
+    text-indent: -9999px;
+    width: 90px;
+    background-color: #090909;
+}
+.main-nav {
+    padding-top: 35px;
+    float: right;
+}
+.main-nav ul {
+    margin: 0;
+}
+.main-nav li {
+    display: inline;
+    margin: 0 5px 0 35px;
+}
+.main-nav a {
+    font-size: 16px;
+}
+.main-nav a:hover {
+    border-bottom: 2px solid #3A4A4A;
+    color: inherit;
+}
+.main-nav a.active {
+    border-bottom: 2px solid #8eaac1;
+}

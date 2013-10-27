@@ -19,3 +19,5 @@ nbproject
 dump.rdb
 .foreverignore
 .*.gz
+
+public/components/*

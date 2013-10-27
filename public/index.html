@@ -9,16 +9,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="description" content="">
         <meta name="keywords" content="">
-        <meta name="author" content="paramana.com - info[at]paramana[dot]com">
+        <meta name="author" content="paramana.com - giannis[at]paramana[dot]com">
         <meta name="viewport" content="width=device-width">
         
-        <title></title>
+        <title>Giannis Panagiotou | CubicCloud</title>
+        <link href='http://fonts.googleapis.com/css?family=Economica:400,700|Gudea:400,700,400italic' rel='stylesheet' type='text/css'>
         
         <!--(if target local)><!-->
         <link rel="stylesheet" href="css/style.css">
         <!--<!(endif)-->
         <!--(if target online)>
-        <link rel="stylesheet" href="/css/signin-min.css">
+        <link rel="stylesheet" href="/css/style-min.css">
         <!(endif)-->
         
         <script>             
@@ -28,17 +29,124 @@
             htmlElement.className      = htmlElement.className.replace('no-js', 'js');
             htmlElement.style.overflow = 'hidden';
         </script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvp7jsdoXHlKh7m17DmmKnpHBN9QWYBuA&sensor=false"></script>
     </head>
     <body>
         <noscript></noscript>
+        
         <div class="warper">
-            <div class="header"></div>
-            <div class="page"></div>
+            <header class="header">
+                <section class="section">
+                    <div class="container clearfix">
+                        <a class="logo" href="http://www.cubiccloud.com">
+                            <h1>cubiccloud</h1>
+                        </a>
+                        <nav class="main-nav">
+                            <ul>
+                                <li><a href="/" class="active">Home</a></li>
+                                <li><a href="/works">Works</a></li>
+                                <li><a href="/more">More</a></li>
+                                <li><a href="/connect">Connect</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+            </header>
+            <div class="page">
+                <section id="home" class="section who">
+                    <div class="content clearfix">
+                        <h2>Web Developer & UI Craftsman</h2>
+                        Hi! I'm Giannis. My passion is to craft user experiences for the humans.<br/>
+                        I have a natural curiosity on how things work and how they can work better.<br/>
+                        I love traveling and I'm constantly moving and collecting experiences,<br/>
+                        I'm currently based between Amsterdam and Athens.
+                    </div>
+                </section>
+                <div class="section-strip">feature projects</div>
+                <section id="works" class="section work">
+                    <a class="project" href="https://c9.io/" target="_blank">
+                        <img src="resources/c9@2x.jpg" alt="cloud9" class="work-image" />
+                        <div class="project-info">
+                            <div class="content">
+                                <h4>Cloud9 IDE</h4>
+                                Cloud9 IDE is an online development environment for JavaScript and Node.js applications.<br/>
+                                I was the main developer for creating the Interface of the IDE.
+                            </div>
+                        </div>
+                    </a>
+                </section>
+                <section class="section work">
+                    <a class="project" href="http://www.qcenter.co.mz/" target="_blank">
+                        <img src="resources/qcenter@2x.jpg" alt="qcenter.co.mz" class="work-image" />
+                        <div class="project-info">
+                            <div class="content">
+                                <h4>QCenter</h4>
+                                A SaaS for quality control of Call Centers.<br/>
+                                I was the lead of the development for App.
+                            </div>
+                        </div>
+                    </a>
+                </section>
+                <section class="section work">
+                    <a class="project" href="http://www.delivericious.gr/" target="_blank">
+                        <img src="resources/delivericious@2x.jpg" alt="delivericious.gr" class="work-image" />
+                        <div class="project-info">
+                            <div class="content">
+                                <h4>Delivericious</h4>
+                                Is an online search engine for finding food delivery shops in Athens.<br/>
+                                I am the lead developer of the Application.
+                            </div>
+                        </div>
+                    </a>
+                </section>
+                <section id="more" class="section text">
+                    <div class="content clearfix">
+                        <h3>More things about me</h3>
+                        <p>
+                            I'm an Amsterdam based web developer.<br/> 
+                            Most of my time I spend creating interfaces that work either on the web or on the phone.<br/>
+                            I prefer working on big projects, projects that require me to extend my limits,<br/>
+                            projects that I have to go the extra mile in order to reach the end.<br/>
+                        </p>
+                        <p>
+                            My tooling usually consists of 
+                            my <span class="light-text">MacBook, headphones</span>
+                            <br/>
+                            <span class="light-text">NetBeansm, Cloud9, Vim, PhotoShop and Illustrator,</span>
+                            <br/>
+                            combine it with
+                            <span class="light-text">JavaScript,</span>
+                            <span class="light-text">HTML5, CSS3, PHP, Node.js, MySQL</span><br/>
+                            and passion for creation.
+                        </p>
+                    </div>
+                </section>
+                <div class="section-strip">Location</div>
+                <div id="map-canvas"></div>
+                <section id="connect" class="section text">
+                    <div class="content clearfix">
+                        <h3>Get in touch</h3>
+                        <p>If you are interested finding more about me or a way to say hello</p>
+                        <a class="contact-link icon-twitter" href="https://twitter.com/bonejp" target="_blank"><span>Twitter Profile</span></a>
+                        <a class="contact-link icon-github" href="https://github.com/giannis" target="_blank"><span>Github Profile</span></a>
+                        <a class="contact-link icon-linkedin" href="http://www.linkedin.com/in/giannispanagiotou" target="_blank"><span>Linkedin Profile</span></a>
+                        <a class="contact-link icon-mail" href="mailto:hello@cubiccloud.com"><span>Email me!</span></a>
+                    </div>
+                </section>
+                
+                <section class="section footer">
+                    <div class="content clearfix">
+                        <span class="name">Giannis Panagiotou</span>
+                        |
+                        <span class="email">hello@cubiccloud.com</span>
+                    </div>
+                </section>
+            </div>
         </div>
         <!--(if target local)><!-->
         <script src="components/log/log.js"></script>
-        <script src="app/debug.js"></script>
-        <script src="components/requirejs/require.js" data-main="app/main"></script>
+        <script src="components/jquery/jquery.js"></script>
+        <script src="js/jsb.js"></script>
         <!--<!(endif)-->
         <!--(if target online)>
         <script>
@@ -62,7 +170,7 @@
         <!(endif)-->
         <script type="text/javascript">
             htmlElement.style.display  = 'block';
-//            htmlElement.style.overflow = '';
+            htmlElement.style.overflow = '';
         </script>
     </body>
 </html>

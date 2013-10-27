@@ -9,9 +9,11 @@
  *
  */
 @import "reset.css";       
+
 @import "base.css";        /* site-wide css*/
-
-@import "inner-base.css";  /* print */    
-
 @import "typography.css";  /* site wide */
 @import "print.css";  /* print */    
+
+@import "inner-base.css";  /* site-wide */    
+@import "header.css";  /* header */    
+
