@@ -73,7 +73,7 @@
     display: block;
 }
 .project, .project * {
-    transition: all 0.3s ease-in-out 0s;
+    transition: opacity 0.3s ease-in-out 0s;
 }
 .project img {
     width: 100%;
@@ -120,7 +120,7 @@
     display: inline-block;
     margin: 0 4%;
     font-size: 52px;
-    transition: all 0.3s ease-in-out 0s;
+    transition: border 0.3s ease-in-out 0s;
 }
 .contact-link span {
     overflow: hidden;

@@ -37,12 +37,12 @@
     margin-top: 13px;
     text-indent: -9999px;
     width: 120px;
-    height: 45px;
-    transition: width 0.2s ease-in-out 0s;
+    height: 46px;
+    transition: none;
     overflow: hidden;
 }
 .logo:hover h1{
-    background-position: 0 -45px;
+    background-position: 0 -51px;
 }
 .main-nav {
     padding-top: 35px;

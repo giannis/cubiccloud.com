@@ -77,12 +77,14 @@
         }
     };
     
-    App.event = {
+    App.nav = {
+        anchors: [],
         init: function(){
-            var _self = this;
+            var _self  = this,
+                anchor = location.hash.replace(/^#/, '') || 'home';
             
-            var anchor = location.hash.replace(/^#/, '') || 'home';
-            _self.goTo(anchor, $('.' + anchor));
+            this.getAnchorPos();
+            this.goTo(anchor, $('.' + anchor));
             
             $('body').on({
                 click: function(event){
@@ -113,13 +115,40 @@
             $target.closest('ul').find('.active').removeClass('active');
             $target.addClass('active');
 
-            $('html,body').animate({
+            $('html,body').stop().animate({
                 scrollTop: top
             }, {
                 duration: 'slow', easing: 'swing'
             });
             
             location.hash = anchor;
+        },
+        getAnchorPos: function(){
+            var _self = this;
+            
+            this.anchors = [];
+            $('.anchor').each(function () {
+                _self.anchors.push({
+                    id  : this.id, 
+                    top : $(this).offset().top
+                }); 
+            });
+        },
+        setHash: function(){
+            var top      = $(window).scrollTop(),
+                distance = 0,
+                hash     = '',
+                currentHash;
+        
+            for (var i = 0, l = this.anchors.length; i < l; i++) {
+                distance = top - this.anchors[i].top;
+                hash     = this.anchors[i].id;
+                
+                if (distance < 50 && distance > -50 && currentHash != hash) {
+                    window.location.hash = hash;
+                    currentHash = hash;
+                }
+            }
         }
     };
     
@@ -128,10 +157,13 @@
                 if ($(window).scrollTop() <= 20)
                     $('.header').removeClass('scroll')
                 else
-                    $('.header').addClass('scroll')
+                    $('.header').addClass('scroll');
+                
+                App.nav.setHash();
             })
             .resize(function() {
                 App.gmap.resize();
+                App.nav.getAnchorPos();
             });
 
     $(document).ready(function(){
@@ -141,7 +173,7 @@
 //            duration: 'slow', easing: 'swing'
 //        });
         App.gmap.init();
-        App.event.init();
+        App.nav.init();
     });
 
     // Expose App to the global object
