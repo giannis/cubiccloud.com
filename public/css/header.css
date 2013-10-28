@@ -30,13 +30,19 @@
     padding-top: 0;
 }
 .logo h1 {
-    border: none !important;
+    background: url("../images/logo.png") no-repeat scroll 0 0 / 100% auto rgba(0, 0, 0, 0);
+    border: medium none !important;
     display: block;
     float: left;
-    height: 30px;
+    margin-top: 13px;
     text-indent: -9999px;
-    width: 90px;
-    background-color: #090909;
+    width: 120px;
+    height: 45px;
+    transition: width 0.2s ease-in-out 0s;
+    overflow: hidden;
+}
+.logo:hover h1{
+    background-position: 0 -45px;
 }
 .main-nav {
     padding-top: 35px;
