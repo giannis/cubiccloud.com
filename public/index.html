@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="css/style.css">
         <!--<!(endif)-->
         <!--(if target online)>
-        <link rel="stylesheet" href="/css/style-min.css">
+        <link rel="stylesheet" href="/css/release.css">
         <!(endif)-->
         
         <script>             
@@ -121,7 +121,7 @@
                         </p>
                     </div>
                 </section>
-                <div class="section-strip">Location</div>
+                <div class="section-strip location-strip">Location</div>
                 <div id="map-canvas"></div>
                 <section id="connect" class="section text anchor">
                     <div class="content clearfix">
@@ -154,7 +154,7 @@
                 var jsb = document.createElement('script'); 
                 jsb.type = 'text/javascript'; 
                 jsb.async = true;
-                jsb.src = '/app/release-min.js';
+                jsb.src = '/js/release.js';
                 var s = document.getElementsByTagName('script')[0]; 
                 s.parentNode.insertBefore(jsb, s);
             })();

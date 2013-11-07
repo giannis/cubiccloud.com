@@ -16,16 +16,26 @@
  */
 (function(window){
     var App = {};
+    var $hearder = $('.header');
     
     App.gmap = {
+        inited : false,
         map    : {},
         marker : {},
         coordinates : [52.354456, 4.91887],//mpraxami 37.941932,23.730001
         resize: function(){
+            if (!this.inited)
+                return;
+            
             $('#map-canvas').css('height', $(window).height() * 0.5);
             this.map.setCenter(new google.maps.LatLng(this.coordinates[0], this.coordinates[1]));
         },
         init: function(){
+            if (typeof google === "undefined") {
+                $('.location-strip:eq(0)').html('Contact');
+                $('#map-canvas').hide();
+                return;
+            }
             var mapStyle = [
                 { featureType: "water", stylers: [ { color: "#9fc0dd" } ] },
                 { elementType: "labels.text.stroke", stylers: [ { color: "#feffff" } ] },
@@ -74,10 +84,13 @@
             });
 
             $('#map-canvas').css('height', $(window).height() * 0.5);
+            
+            this.inited = true;
         }
     };
     
     App.nav = {
+        $lastSel: {},
         anchors: [],
         init: function(){
             var _self  = this,
@@ -114,7 +127,8 @@
             
             $target.closest('ul').find('.active').removeClass('active');
             $target.addClass('active');
-
+            this.$lastSel = $target;
+            
             $('html,body').stop().animate({
                 scrollTop: top
             }, {
@@ -130,6 +144,7 @@
             $('.anchor').each(function () {
                 _self.anchors.push({
                     id  : this.id, 
+                    $link : $('.' + this.id, '.main-nav'),
                     top : $(this).offset().top
                 }); 
             });
@@ -138,28 +153,35 @@
             var top      = $(window).scrollTop(),
                 distance = 0,
                 hash     = '',
-                currentHash;
+                currentHash, current;
         
             for (var i = 0, l = this.anchors.length; i < l; i++) {
-                distance = top - this.anchors[i].top;
-                hash     = this.anchors[i].id;
+                current  = this.anchors[i];
+                distance = top - current.top;
+                hash     = current.id;
                 
-                if (distance < 50 && distance > -50 && currentHash != hash) {
-                    window.location.hash = hash;
-                    currentHash = hash;
-                }
+                if (distance > 50 || distance < -50 || currentHash == hash) 
+                    continue;
+
+                window.location.hash = hash;
+                currentHash = hash;
+                this.$lastSel.removeClass('active');
+                current.$link.addClass('active');
+                this.$lastSel = current.$link;
+                return;
             }
         }
     };
     
     $(window)
             .scroll(function() {
-                if ($(window).scrollTop() <= 20)
-                    $('.header').removeClass('scroll')
-                else
-                    $('.header').addClass('scroll');
-                
-                App.nav.setHash();
+                if ($(this).scrollTop() <= 20) {
+                   $hearder.removeClass('scroll')
+                }
+                else {
+                    $hearder.addClass('scroll');
+                    App.nav.setHash();
+                }
             })
             .resize(function() {
                 App.gmap.resize();
