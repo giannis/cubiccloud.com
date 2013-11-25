@@ -8,12 +8,11 @@
  * Author : paramana (giannis AT paramana DOT com)
  *
  */
-@import "reset.css";       
+@import "reset.css";
 
 @import "base.css";        /* site-wide css*/
 @import "typography.css";  /* site wide */
-@import "print.css";  /* print */    
+@import "print.css";  /* print */
 
-@import "inner-base.css";  /* site-wide */    
-@import "header.css";  /* header */    
-
+@import "inner-base.css";  /* site-wide */
+@import "header.css";  /* header */

@@ -90,14 +90,16 @@
     };
     
     App.nav = {
+        windowHeight: 0,
         $lastSel: {},
         anchors: [],
         init: function(){
             var _self  = this,
-                anchor = location.hash.replace(/^#/, '') || 'home';
+                anchor = location.hash.replace(/^#/, '');
             
+            this.windowHeight = $(window).height();
             this.getAnchorPos();
-            this.goTo(anchor, $('.' + anchor));
+            this.goTo(anchor, $('.' + (anchor || 'home')));
             
             $('body').on({
                 click: function(event){
@@ -110,11 +112,24 @@
                         _self.goTo(anchor, $target);
                         return false;
                     }
+                    
+                    if ($target.hasClass('bezel')) {
+                        if ($hearder.hasClass('open')) {
+                            $hearder.removeClass('open').addClass('closed');
+                            $target.removeClass('icon-arrow-up').addClass('icon-arrow-down');
+                        }
+                        else {
+                            $hearder.removeClass('closed').addClass('open');
+                            $target.removeClass('icon-arrow-down').addClass('icon-arrow-up');
+                        }
+
+                        return false;
+                    }
                 }
             });
         },
-        goTo: function(anchor, $target){
-            if (anchor == 'home') {
+        goTo: function(anchor, $target){            
+            if (!anchor || anchor == 'home') {
                 var top = 0;
             }
             else {
@@ -135,7 +150,8 @@
                 duration: 'slow', easing: 'swing'
             });
             
-            location.hash = anchor;
+            if (anchor)
+                location.hash = anchor;
         },
         getAnchorPos: function(){
             var _self = this;
@@ -145,30 +161,29 @@
                 _self.anchors.push({
                     id  : this.id, 
                     $link : $('.' + this.id, '.main-nav'),
-                    top : $(this).offset().top
+                    top : $(this).offset().top,
+                    height: $(this).outerHeight()
                 }); 
             });
         },
-        setHash: function(){
-            var top      = $(window).scrollTop(),
-                distance = 0,
-                hash     = '',
+        setNav: function(){
+            var windowPos = $(window).scrollTop(),
+                hash      = '',
+                windowT   = this.windowHeight / 8,
                 currentHash, current;
         
             for (var i = 0, l = this.anchors.length; i < l; i++) {
                 current  = this.anchors[i];
-                distance = top - current.top;
                 hash     = current.id;
                 
-                if (distance > 50 || distance < -50 || currentHash == hash) 
+                if (windowPos < (current.top - $hearder.outerHeight() - windowT) || 
+                    windowPos > (current.top + current.height + $hearder.outerHeight() + windowT))
                     continue;
-
-                window.location.hash = hash;
+                
                 currentHash = hash;
                 this.$lastSel.removeClass('active');
                 current.$link.addClass('active');
                 this.$lastSel = current.$link;
-                return;
             }
         }
     };
@@ -180,12 +195,13 @@
                 }
                 else {
                     $hearder.addClass('scroll');
-                    App.nav.setHash();
+                    App.nav.setNav();
                 }
             })
             .resize(function() {
                 App.gmap.resize();
                 App.nav.getAnchorPos();
+                App.nav.windowHeight = $(window).height();
             });
 
     $(document).ready(function(){

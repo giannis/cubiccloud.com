@@ -19,12 +19,16 @@
 }
 .header .container {
     padding: 20px 40px;
+    position: relative;
 }
 .header.scroll {
     height: 80px;
     -moz-box-shadow       : 0 -1px 0 rgba(255, 255, 255, 0.2) inset, 0 0 1px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow    : 0 -1px 0 rgba(255, 255, 255, 0.2) inset, 0 0 1px rgba(0, 0, 0, 0.6);
     box-shadow            : 0 -1px 0 rgba(255, 255, 255, 0.2) inset, 0 0 1px rgba(0, 0, 0, 0.6);
+}
+.header.open {
+    height: 270px;
 }
 .header.scroll .container {
     padding-top: 0;
@@ -53,7 +57,8 @@
 }
 .main-nav li {
     display: inline;
-    margin: 0 5px 0 35px;
+    margin: 0 0 0 25px;
+    padding: 5px 5px 4px;
 }
 .main-nav a {
     font-size: 16px;
@@ -64,4 +69,78 @@
 }
 .main-nav a.active {
     border-bottom: 2px solid #8eb5d4;
+}
+.main-nav .external {
+    margin-left: 20px;
+    color: #678299;
+}
+.main-nav .external a {
+    padding: 2px;
+    background-color: rgba(255, 253, 133, 0.6);
+}
+.bezel {
+    display: none;
+    font-size: 30px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding-top: 2px;
+}
+.header.open .bezel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+@media only screen and (max-device-width : 550px) {
+    .header {
+        height: 113px;
+    }
+    .header.closed, .header.closed * {
+        transition: none;
+    }
+    .header.scroll {
+        height: 60px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .header .container {
+        padding: 10px 40px;
+    }
+    .main-nav {
+        float: none;
+        display: none;
+        padding-top: 15px;
+    }
+    .header.open .main-nav {
+        display: block;
+    }
+    .main-nav li {
+        margin: 5px 5px 5px 15px;
+        display: block;
+    }
+    .main-nav .external {
+        margin: 0;
+    }
+    .logo h1 {
+/*        background: url("../images/cloud.png") no-repeat scroll 0 0 / 100% auto rgba(0, 0, 0, 0);
+        width: 60px;
+        height: 35px;
+        margin-top: 23px;
+        float: right;*/
+        margin: 5px auto;
+        float: none;
+    }
+    .logo:hover h1{ 
+        background-position: 0 0;
+    }
+    .header.scroll .logo h1 {
+        
+    }
+    .bezel {
+        display: block;
+    }
+    .header.scroll .bezel {
+        display: none;
+    }
 }

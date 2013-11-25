@@ -1,4 +1,3 @@
-/*--Typography css --*/ 
 @font-face {
 	font-family: 'icomoon';
 	src: url('fonts/icomoon.eot');
@@ -42,14 +41,4 @@
 }
 .icon-arrow-up:before {
 	content: "\e608";
-}
-
-body {
-    /*font-family: 'Ruda', sans-serif;*/
-    font-family: 'Gudea', 'Trebuchet MS', sans-serif;
-    text-align: center;
-    color: #323232;
-}
-h1, h2, h3, h4, h5 {
-    font-family: 'Economica', 'Garamond', sans-serif;
 }

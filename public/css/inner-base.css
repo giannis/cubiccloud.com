@@ -1,6 +1,6 @@
 /*--Inner pages base & site-wide css --*/
 .section {
-    
+    min-width: 320px;
 }
 .page {
     margin-top: 120px;
@@ -66,7 +66,7 @@
     box-shadow            : 0 -1px 0 rgba(255, 255, 255, 0.2) inset, 0 0 1px rgba(0, 0, 0, 0.6);
 }
 .project {
-    height: 350px;
+    max-height: 350px;
     overflow: hidden;
     position: relative;
     background-color: #8eb5d4;
@@ -121,11 +121,13 @@
     margin: 0 4%;
     font-size: 54px;
     transition: border 0.3s ease-in-out 0s;
+    width: 60px;
 }
 .contact-link span {
     overflow: hidden;
     text-indent: -9999px; 
     display: inline-block;
+    width: 0;
 }
 /*-- footer --*/
 .footer {
@@ -140,4 +142,10 @@
 }
 .footer .email {    
     padding-left: 5px;
+}
+
+@media only screen and (max-device-width : 550px) {
+    .project-info {
+        top: 0%;
+    }
 }
