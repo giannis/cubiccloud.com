@@ -16,7 +16,7 @@
  */
 (function(window){
     var App = {};
-    var $hearder = $('.header');
+    var $header = $('.header');
     
     App.gmap = {
         inited : false,
@@ -114,12 +114,12 @@
                     }
                     
                     if ($target.hasClass('bezel')) {
-                        if ($hearder.hasClass('open')) {
-                            $hearder.removeClass('open').addClass('closed');
+                        if ($header.hasClass('open')) {
+                            $header.removeClass('open').addClass('closed');
                             $target.removeClass('icon-arrow-up').addClass('icon-arrow-down');
                         }
                         else {
-                            $hearder.removeClass('closed').addClass('open');
+                            $header.removeClass('closed').addClass('open');
                             $target.removeClass('icon-arrow-down').addClass('icon-arrow-up');
                         }
 
@@ -176,8 +176,8 @@
                 current  = this.anchors[i];
                 hash     = current.id;
                 
-                if (windowPos < (current.top - $hearder.outerHeight() - windowT) || 
-                    windowPos > (current.top + current.height + $hearder.outerHeight() + windowT))
+                if (windowPos < (current.top - $header.outerHeight() - windowT) || 
+                    windowPos > (current.top + current.height + $header.outerHeight() + windowT))
                     continue;
                 
                 currentHash = hash;
@@ -188,13 +188,15 @@
         }
     };
     
+    var headerHeight = $header.height();
+    
     $(window)
             .scroll(function() {
                 if ($(this).scrollTop() <= 20) {
-                   $hearder.removeClass('scroll')
+                   $header.removeClass('scroll')//.stop().animate({'height': headerHeight}, 'fast')
                 }
                 else {
-                    $hearder.addClass('scroll');
+                    $header.addClass('scroll')//.stop().animate({'height': 80}, 'fast');
                     App.nav.setNav();
                 }
             })
