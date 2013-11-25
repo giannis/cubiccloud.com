@@ -14,7 +14,13 @@
         
         <title>Giannis Panagiotou | CubicCloud</title>
         <link href='http://fonts.googleapis.com/css?family=Economica:400,700|Gudea:400,700,400italic' rel='stylesheet' type='text/css'>
+        
+        <!--(if target local)><!-->
+        <link rel="stylesheet" href="css/style.css">
+        <!--<!(endif)-->
+        <!--(if target online)>
         <link rel="stylesheet" href="/css/release.css">
+        <!(endif)-->
         
         <script>             
             var htmlElement = document.getElementsByTagName('html')[0];
@@ -139,6 +145,12 @@
                 </section>
             </div>
         </div>
+        <!--(if target local)><!-->
+        <script src="components/log/log.js"></script>
+        <script src="components/jquery/jquery.js"></script>
+        <script src="js/jsb.js"></script>
+        <!--<!(endif)-->
+        <!--(if target online)>
         <script>
             (function() {
                 var jsb = document.createElement('script'); 
@@ -157,6 +169,7 @@
             ga('create', 'UA-3992112-3', 'cubiccloud.com');
             ga('send', 'pageview');
         </script>
+        <!(endif)-->
         <script type="text/javascript">
             htmlElement.style.display  = 'block';
             htmlElement.style.overflow = '';
