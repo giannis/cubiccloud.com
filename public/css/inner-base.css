@@ -100,7 +100,7 @@
 .project:hover .project-info {
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 	filter: alpha(opacity=100);
-    opacity: 100;
+    opacity: 1;
 }
 .project-info .content {
     width: 50%;
@@ -157,6 +157,31 @@
     }
     .who h2 {
         padding: 10px 20px 30px;
+    }
+    .work {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    }
+    .project-info {
+        background-color: #8EB5D4;
+        bottom: 0;
+        left: auto;
+        opacity: 0.9;
+        right: 0;
+        top: 0;
+        width: 60%;
+    }
+    .project-info .content {
+        font-size: 9px;
+        padding: 0 10px;
+        position: relative;
+        top: 15%;
+        width: 100%;
+        min-width: 100%;
+    }
+    .project:hover img {
+        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: alpha(opacity=100);
+        opacity: 1;
     }
     .text .content {
         font-size: 15px;
