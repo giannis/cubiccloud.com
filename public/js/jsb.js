@@ -150,8 +150,8 @@
                 duration: 'slow', easing: 'swing'
             });
             
-            if (anchor)
-                location.hash = anchor;
+            // if (anchor)
+            //     location.hash = anchor;
         },
         getAnchorPos: function(){
             var _self = this;
@@ -193,10 +193,13 @@
     $(window)
             .scroll(function() {
                 if ($(this).scrollTop() <= 20) {
-                   $header.removeClass('scroll')//.stop().animate({'height': headerHeight}, 'fast')
+                    if ($header.hasClass('scroll'))
+                        $header.removeClass('scroll')//.stop().animate({'height': headerHeight}, 'fast')
                 }
                 else {
-                    $header.addClass('scroll')//.stop().animate({'height': 80}, 'fast');
+                    if (!$header.hasClass('scroll'))
+                        $header.addClass('scroll');//.stop().animate({'height': 80}, 'fast');
+
                     App.nav.setNav();
                 }
             })
