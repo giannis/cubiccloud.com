@@ -60,10 +60,14 @@
     -webkit-box-shadow    : 0px 1px 0 rgba(255, 255, 255, 0.85);
     box-shadow            : 0px 1px 0 rgba(255, 255, 255, 0.85);
     margin-bottom: 1px;*/
-    background-color: #EFEFEF;
-    -moz-box-shadow       : 0 -1px 0 rgba(255, 255, 255, 0.2) inset, 0 0 1px rgba(0, 0, 0, 0.6);
+    /*-moz-box-shadow       : 0 -1px 0 rgba(255, 255, 255, 0.2) inset, 0 0 1px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow    : 0 -1px 0 rgba(255, 255, 255, 0.2) inset, 0 0 1px rgba(0, 0, 0, 0.6);
-    box-shadow            : 0 -1px 0 rgba(255, 255, 255, 0.2) inset, 0 0 1px rgba(0, 0, 0, 0.6);
+    box-shadow            : 0 -1px 0 rgba(255, 255, 255, 0.2) inset, 0 0 1px rgba(0, 0, 0, 0.6);*/
+    background-color: #EFEFEF;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+.work.last {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 .project {
     max-height: 350px;
@@ -144,7 +148,9 @@
 .footer .email {    
     padding-left: 5px;
 }
+@media only screen and (max-width : 1300px) { 
 
+}
 @media only screen and (max-width : 550px) {    
     .project-info {
         top: 0%;
@@ -158,9 +164,6 @@
     }
     .who h2 {
         padding: 10px 20px 30px;
-    }
-    .work {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     }
     .project-info {
         background-color: #8EB5D4;
