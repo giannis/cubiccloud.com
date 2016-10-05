@@ -19,6 +19,6 @@ cat components/jquery/jquery.min.js >> js/release.js
 cat js/release.js.foo >> js/release.js
 rm js/release.js.foo
 
-#echo "/*! qcenter, Copyright 2013 - paramana.com , licences: /licences.txt */"|cat - js/release.js > /tmp/out && mv /tmp/out js/release.js
-echo "/*! qcenter, Copyright 2013 - paramana.com , licences: /licences.txt */"|cat - css/release.css > /tmp/out && mv /tmp/out css/release.css
+#echo "/*! Copyright 2016 - cubiccloud.com , licences: /licences.txt */"|cat - js/release.js > /tmp/out && mv /tmp/out js/release.js
+echo "/*! Copyright 2016 - cubiccloud.com , licences: /licences.txt */"|cat - css/release.css > /tmp/out && mv /tmp/out css/release.css
 echo "End packing website resources"

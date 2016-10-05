@@ -4,9 +4,7 @@
  * Started: 26-10-2013
  * Updated: 26-10-2013
  * Url    : http://www.cubiccloud.com
- * Author : giannis (giannis AT paramana DOT com)
- *
- * Copyright (c) 2013 paramana.com
+ * Author : giannis (hello AT cubiccloud DOT com)
  *
  */
 
