@@ -108,7 +108,7 @@
                             anchor = (parts[parts.length - 1] || 'home');                        
 
                         _self.goTo(anchor, $target);
-                        return false;
+                        return true;
                     }
                     
                     if ($target.hasClass('bezel')) {
