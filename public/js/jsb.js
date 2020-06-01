@@ -104,7 +104,7 @@
                     var $target = $(event.target);
                     
                     if ($target.hasClass('nav-link')) {
-                        var parts  = $target.attr('href').split('/'),
+                        var parts  = $target.attr('href').split('#'),
                             anchor = (parts[parts.length - 1] || 'home');                        
 
                         _self.goTo(anchor, $target);
