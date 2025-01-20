@@ -33,7 +33,8 @@ body {
   text-shadow: none;
 }
 
-::selection {
+::selection,
+.color-link {
   /*background: rgba(255, 253, 133, 0.6);*/
   background: rgba(142, 181, 212, 0.6);
   text-shadow: none;
@@ -72,4 +73,12 @@ strong {
 
 .clearfix {
     *zoom: 1;
+}
+
+.d-inline-block {
+    display: inline-block;
+}
+
+.no-margin-top {
+    margin-top: 0;
 }
